@@ -64,9 +64,9 @@ void setup() {
   Serial.begin(115200);
 
   // 0. Inicialitzar Pantalla OLED
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3D)) { 
     Serial.println(F("SSD1306 fallback"));
-    for(;;);
+   // for(;;);
   }
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
