@@ -3,18 +3,16 @@
 #include <LoRa.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
-#include <Wire.h>              // Per a la comunicació I2C de la pantalla
-#include <Adafruit_GFX.h>      // Llibreria de gràfics
-#include <Adafruit_SSD1306.h>  // Llibreria de la pantalla SSD1306
+#include <Wire.h>
+#include <SSD1306Wire.h> // Nova llibreria del teu company
 
-// Configuració Pantalla OLED
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
-#define OLED_RESET    -1 
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+// Configuració Pantalla OLED (Igual que el teu company)
+#define OLED_SDA 21
+#define OLED_SCL 22
+SSD1306Wire display(0x3c, OLED_SDA, OLED_SCL); 
 
 // Pins LoRa per a la TTGO T-Beam
-#define SCK     5
+#define SCK      5
 #define MISO    19
 #define MOSI    27
 #define SS      18
@@ -28,20 +26,17 @@ const char* password = "223AuLa23";
 // Configuració MQTT
 const char* mqtt_server = "192.168.223.50";
 const int mqtt_port = 1883;
-const char* mqtt_topic = "ado/pot";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-// Funció per mostrar missatges a la pantalla ràpidament
+// Nova funció d'actualitzar pantalla adaptada a la llibreria SSD1306Wire
 void actualitzarPantalla(String linia1, String linia2) {
-  display.clearDisplay();
-  display.setCursor(0, 10);
-  display.setTextSize(1);
-  display.println(linia1);
-  display.setCursor(0, 30);
-  display.setTextSize(1);
-  display.println(linia2);
+  display.clear();
+  display.setTextAlignment(TEXT_ALIGN_LEFT);
+  display.setFont(ArialMT_Plain_10);
+  display.drawString(0, 10, linia1);
+  display.drawString(0, 30, linia2);
   display.display();
 }
 
@@ -63,13 +58,9 @@ void reconnect() {
 void setup() {
   Serial.begin(115200);
 
-  // 0. Inicialitzar Pantalla OLED
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3D)) { 
-    Serial.println(F("SSD1306 fallback"));
-   // for(;;);
-  }
-  display.clearDisplay();
-  display.setTextColor(SSD1306_WHITE);
+  // 0. Inicialitzar Pantalla OLED (Mètode del teu company)
+  display.init();
+  display.flipScreenVertically();
   actualitzarPantalla("Iniciant...", "Espereu...");
 
   // 1. Connectar WiFi
@@ -93,7 +84,7 @@ void setup() {
     actualitzarPantalla("LORA ERROR", "Revisa pins");
     while (1);
   }
-  actualitzarPantalla("LORA: OK", "Esperant dades...");
+  actualitzarPantalla("LORA: OK", "Escoltant...");
 }
 
 void loop() {
@@ -111,19 +102,35 @@ void loop() {
     }
 
     Serial.println("Rebut via LoRa: " + message);
+    String topic = "";
+    String valor = "";
 
-    // Publicar al subtopic 'ado/pot'
-    if (client.publish(mqtt_topic, message.c_str())) {
-      Serial.println("Dades enviades al servidor.");
+    // SEPARACIÓ DE SUBTOPICS PER ETIQUETA
+    if (message.startsWith("PH:")) {
+      topic = "ado/ph";
+      valor = message.substring(3); // Treu "PH:"
+    } 
+    else if (message.startsWith("POT:")) {
+      topic = "ado/pot";
+      valor = message.substring(4); // Treu "POT:"
+    }
+    else {
+      topic = "ado/altres"; 
+      valor = message;
+    }
+
+    // Publicar al topic decidit per la lògica anterior
+    if (client.publish(topic.c_str(), valor.c_str())) {
+      Serial.print("Dades publicades a: ");
+      Serial.println(topic);
       
-      // MOSTRAR EL MISSATGE QUE VOLIES A LA PANTALLA
-      actualitzarPantalla("Enviant dades al", "servidor...");
+      actualitzarPantalla("Publicant dades...", topic);
       
-      delay(1500); // Temps per llegir el missatge
-      actualitzarPantalla("Darrera dada:", message);
+      delay(1000); 
+      actualitzarPantalla(topic, valor);
     } else {
-      Serial.println("Error MQTT.");
-      actualitzarPantalla("MQTT ERROR", "No publicat");
+      Serial.println("Error en publicar a MQTT.");
+      actualitzarPantalla("MQTT ERROR", "No enviat");
     }
   }
 }
