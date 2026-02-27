@@ -1,4 +1,7 @@
-### Proces per a insta·lar Node-RED:  
+# :bar_chart: Node-RED 
+---
+## Proces per a insta·lar Node-RED: 
+---
 El primer que tendriem que fer seria actualitzar el sistema amb:  
 ```bash
 sudo apt update && sudo apt upgrade  
@@ -71,3 +74,7 @@ Ja tendirem el nostre servei Node-Red funcionant!!
 
 <img width="1916" height="912" alt="image" src="https://github.com/user-attachments/assets/2abc36a3-ebcd-4f30-bda2-feb455f93495" />
 
+---
+## Fluxos principals Node-RED: 
+---
+####  Llegir dades 
