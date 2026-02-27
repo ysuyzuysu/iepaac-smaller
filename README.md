@@ -44,7 +44,7 @@ Per replicar aquest projecte, necessitareu els següents components:
 
 El projecte es divideix en tres parts principals. Consulteu els seus README específics per a més detalls:
 
-1.  **[Emissor](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/receptor.md)):** Recull les dades del sensor de pH i les envia per LoRa.
+1.  **[Emissor](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/receptor.md):** Recull les dades del sensor de pH i les envia per LoRa.
 2.  **[Receptor](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/receptor.md):** Rep els paquets LoRa i els reenvia al servidor MQTT.
 3.  **[Servidor MQTT](https://github.com/ysuyzuysu/iepac-smaller/blob/main/mqtt.md](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/mqtt.md)):** Instruccions per configurar la Raspberry Pi per guardar les dades.
 4.  **[NodeRED]([https://github.com/ysuyzuysu/iepaac-smaller/blob/main/nodered.md](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/nodered.md)):** Instruccions per configurar **EN** la Raspberry Pi les instruccions.
