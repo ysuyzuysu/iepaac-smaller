@@ -1,4 +1,4 @@
-## Servidor MQTT i Node-RED
+## Servidor MQTT
 
 ### Configuració i adreçes:
 - IP del servidor: 192.168.223.50  
@@ -67,6 +67,7 @@ mosquitto_pub -h 192.168.223.50 -p 1883 -t ado -m "hola"
 Ja tendriem el servidor MQTT amb les proves fetes!!  
   
 ---
+
 
 
 
