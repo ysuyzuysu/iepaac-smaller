@@ -92,6 +92,7 @@ Configuració del mqtt in:
 
 Farem dos clics sobre el node mqtt in per editar-lo, afegirem un nou servidor clicant al "+", i aqui tindriem que afegir la ip del servidor mqtt o si es el mateix servidor que aon esta el node-red, podriem ficar **localhost**
 
+<img width="548" height="51" alt="image" src="https://github.com/user-attachments/assets/6a22eef6-1b50-47e2-9089-ea474c45e5de" />
 
 
 
