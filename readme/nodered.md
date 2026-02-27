@@ -73,17 +73,36 @@ http://192.168.223.50:1880
   
 Ja tendirem el nostre servei Node-Red funcionant!!
 
-<img width="1916" height="912" alt="image" src="https://github.com/user-attachments/assets/2abc36a3-ebcd-4f30-bda2-feb455f93495" />
+<img width="958" height="456" alt="image" src="https://github.com/user-attachments/assets/2abc36a3-ebcd-4f30-bda2-feb455f93495" />
 
 ---
 ## Fluxos principals Node-RED: 
 ---
 * ### Llegir dades i crear un fitxer .json de ado/pot
 
+<img width="714" height="231" alt="image" src="https://github.com/user-attachments/assets/13f997f6-c95b-402c-a3f8-2c8d6c941bd4" />
+
+Dins de un fluxe tindrem que afegir:
+ * 1 mqtt in
+ * 1 debug
+ * 1 function
+ * 1 escribir archivo (file)
+
+Configuració del mqtt in:  
+
+Farem dos clics sobre el node mqtt in per editar-lo, afegirem un nou servidor clicant al "+", i aqui tindriem que afegir la ip del servidor mqtt o si es el mateix servidor que aon esta el node-red, podriem ficar **localhost**
 
 
-  Dins de un fluxe tindrem que afegir:
-  * 1 mqtt in
-  * 1 debug
-  * 1 function
-  * 1 escribir archivo (file)
+
+
+
+
+
+
+
+
+
+
+
+
+
