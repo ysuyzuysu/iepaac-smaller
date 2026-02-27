@@ -42,7 +42,7 @@ Per replicar aquest projecte, necessitareu els següents components:
 
 ## 📂 Estructura del Projecte
 
-El projecte es divideix en tres parts principals. Consulteu els seus README específics per a més detalls:
+El projecte es divideix en 4 parts principals. Consulteu els seus README específics per a més detalls:
 
 1.  **[Emissor](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/receptor.md):** Recull les dades del sensor de pH i les envia per LoRa.
 2.  **[Receptor](https://github.com/ysuyzuysu/iepaac-smaller/blob/main/readme/receptor.md):** Rep els paquets LoRa i els reenvia al servidor MQTT.
