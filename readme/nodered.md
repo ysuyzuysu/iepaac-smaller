@@ -99,6 +99,7 @@ Aqui tindriem que afegir la ip del servidor mqtt o si es el mateix servidor que 
 <img width="757" height="218" alt="image" src="https://github.com/user-attachments/assets/d58f9262-c2c2-4424-98bf-ff0437f6003e" />
 
 Per finalitzar este node, tenim que afegir el tema al que volem que estigue escoltant, en el meu cas ado/pot
+<img width="545" height="158" alt="image" src="https://github.com/user-attachments/assets/96dd0619-a97b-4322-aead-896395aadc00" />
 
 
 
