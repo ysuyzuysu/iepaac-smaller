@@ -1,4 +1,4 @@
-# IEPAC-Smaller: Marine pH Monitoring System 🌊
+# IEPAAC-Smaller: Marine pH Monitoring System 🌊
 
 A LoRa-based IoT project designed for marine life monitoring in an educational environment. Will be used on an Institute about Marine Life.
 
