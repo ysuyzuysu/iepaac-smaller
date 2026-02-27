@@ -46,7 +46,7 @@ El projecte es divideix en tres parts principals. Consulteu els seus README espe
 
 1.  **[Emissor](enllaç_aquí):** Recull les dades del sensor de pH i les envia per LoRa.
 2.  **[Receptor](enllaç_aquí):** Rep els paquets LoRa i els reenvia al servidor MQTT.
-3.  **[Servidor MQTT](enllaç_aquí):** Instruccions per configurar la Raspberry Pi per guardar les dades.
+3.  **[Servidor MQTT](https://github.com/ysuyzuysu/iepac-smaller/blob/main/mqtt.md):** Instruccions per configurar la Raspberry Pi per guardar les dades.
 
 ---
 
