@@ -1,6 +1,6 @@
 # IEPAC-Smaller: Marine pH Monitoring System 🌊
 
-A LoRa-based IoT project designed for marine life monitoring in an educational environment. This project demonstrates how Artificial Intelligence (Google Gemini) can enable complex hardware programming (C++) for students and researchers without prior coding experience.
+A LoRa-based IoT project designed for marine life monitoring in an educational environment. Will be used on an Institute about Marine Life.
 
 ---
 
