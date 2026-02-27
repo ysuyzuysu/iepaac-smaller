@@ -19,13 +19,15 @@
 
 ### Proces per a insta·lar MQTT:
 El primer que tendriem que fer seria actualitzar el sistema amb:  
+```bash
 sudo apt update && sudo apt upgrade  
-  
+```
 A continuació tindriem que tenir el sistema amb una IP fixa, com per exemple, en el meu cas la .50  
   
 Seguidament tendriem que instal·lar el Mosquitto i el Mosquitto-Clients:  
+```bash
 sudo apt install mosquitto mosquitto-clients -y  
-  
+```
 Comprobem que el servei esta actiu i no dona cap error:  
 sudo systemctl status mosquitto  
   
@@ -123,4 +125,5 @@ I ja tendirem el nostre servei Node-Red funcionant!!
 ### Proces per a insta·lar Influxdb: 
 Token:
 PsI5qkcST2aQDvXlFru7pysFGo86BN87FNjFK-hTPmZKyuE4GiMgmSNxJNFKz3euQrXzOlr5LJDw-m19N4osPg==
+
 
