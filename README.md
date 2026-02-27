@@ -1,4 +1,4 @@
-# IEPAC-Smaller: Sistema de Monitorització de pH Marí 🌊
+# IEPAAC-Smaller: Sistema de Monitorització de pH Marí 🌊
 
 Un projecte IoT basat en tecnologia LoRa, dissenyat per a la monitorització de la vida marina en un entorn educatiu. Aquest projecte ha estat desenvolupat pel grup **Hydrahub**. 
 
