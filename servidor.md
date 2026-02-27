@@ -9,7 +9,6 @@
     - Canal principal: ado
         - Canal pH: ph
         - Canal potenciometre: pot
-- Influxdb: http://192.168.223.50:8086
  
 ### Materials:
 - Raspberry Pi 5 amb Ubuntu Server 24.04
@@ -68,6 +67,7 @@ mosquitto_pub -h 192.168.223.50 -p 1883 -t ado -m "hola"
 Ja tendriem el servidor MQTT amb les proves fetes!!  
   
 ---
+
 
 
 
