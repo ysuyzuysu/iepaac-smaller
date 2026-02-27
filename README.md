@@ -9,7 +9,6 @@ A LoRa-based IoT project designed for marine life monitoring in an educational e
 * **Wireless Data Transmission:** Uses LoRa technology to send sensor data over long distances without needing Wi-Fi or Bluetooth.
 * **Real-time pH Monitoring:** Integrated sensor logic to track water acidity levels in marine environments.
 * **MQTT Integration:** Centralized data management using a Raspberry Pi as a broker.
-* **AI-Powered Development:** Entirely programmed using **Google Gemini**, showcasing the potential of LLMs in STEM education.
 * **Low Power Design:** Optimized for LILYGO T-BEAM boards (AXP2101) for field deployment.
 
 ---
@@ -35,7 +34,6 @@ To build this project, you will need the following components:
 * **Language:** C++ (Arduino Framework).
 * **IDE:** [VS Code](https://code.visualstudio.com/) or [CodeOSS](https://vscodium.com/).
 * **Extension:** [PlatformIO IDE](https://platformio.org/).
-* **AI Tools:** [Google Gemini](https://gemini.google.com/) (Mainly used for code generation).
 
 ---
 
