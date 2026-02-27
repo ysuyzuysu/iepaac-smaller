@@ -88,11 +88,17 @@ Dins de un fluxe tindrem que afegir:
  * 1 function
  * 1 escribir archivo (file)
 
-Configuració del mqtt in:  
+---
 
-Farem dos clics sobre el node mqtt in per editar-lo, afegirem un nou servidor clicant al "+", i aqui tindriem que afegir la ip del servidor mqtt o si es el mateix servidor que aon esta el node-red, podriem ficar **localhost**
+#### Configuració del mqtt in:  
 
-<img width="548" height="51" alt="image" src="https://github.com/user-attachments/assets/6a22eef6-1b50-47e2-9089-ea474c45e5de" />
+Farem dos clics sobre el node mqtt in per editar-lo, afegirem un nou servidor clicant al "+"  
+<img width="548" height="51" alt="image" src="https://github.com/user-attachments/assets/6a22eef6-1b50-47e2-9089-ea474c45e5de" />  
+
+Aqui tindriem que afegir la ip del servidor mqtt o si es el mateix servidor que aon esta el node-red, podriem ficar **localhost**
+<img width="757" height="218" alt="image" src="https://github.com/user-attachments/assets/d58f9262-c2c2-4424-98bf-ff0437f6003e" />
+
+Per finalitzar este node, tenim que afegir el tema al que volem que estigue escoltant, en el meu cas ado/pot
 
 
 
