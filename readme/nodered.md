@@ -1,12 +1,12 @@
-# :bar_chart: Node-RED 
+# :bar_chart: *Node-RED*
 ---
 ## Proces per a insta·lar Node-RED: 
 ---
-El primer que tendriem que fer seria actualitzar el sistema amb:  
+El primer que tendriem que fer seria **actualitzar** el sistema amb:  
 ```bash
 sudo apt update && sudo apt upgrade  
 ```
-Seguidament de instal·lar el nodejs amb:  
+Seguidament de instal·lar el **nodejs** amb:  
 ```bash
 sudo apt install -y nodejs  
 ```
@@ -18,11 +18,11 @@ i
 ```bash
 npm -v  
 ``` 
-Instal·lem Node-Red amb:   
+**Instal·lem Node-Red** amb:   
 ```bash
 npm install -g --unsafe-perm node-red  
 ```
-També el Node-Red-Admin amb:  
+També el **Node-Red-Admin** amb:  
 ```bash
 npm install -g --unsafe-perm node-red-admin  
 ```
@@ -30,7 +30,8 @@ Comprovem l'estat amb:
 ```bash
 node-red  
 ```
-OPCIONAL: Si volem utlitzar el node-red com un servei tindriem que fer la següent configuració:  
+#### OPCIONAL: 
+Si volem utlitzar el node-red com un servei tindriem que fer la següent configuració:  
 Creem un fitxer a la següent direcció:  
 ```bash
 sudo nano /etc/systemd/system/nodered.service  
@@ -62,7 +63,7 @@ Per comprobar si funciona:
 ```bash
 sudo systemctl status nodered.service  
 ```
-Per accedir a la pagina web del nostre node-red l'unic que tindriem que fer es, accedir per un client amb navegador web que estigui amb connexió amb el nostre servidor i posar el següent al buscar d'adreçes:  
+Per accedir a la pagina web del nostre node-red l'unic que tindriem que fer es, accedir per un **client amb navegador web que estigui amb connexió amb el nostre servidor** i posar el següent al buscar d'adreçes:  
 ```bash  
 http://la.nostra.ip:1880  
 ```  
@@ -77,4 +78,12 @@ Ja tendirem el nostre servei Node-Red funcionant!!
 ---
 ## Fluxos principals Node-RED: 
 ---
-####  Llegir dades 
+* ### Llegir dades i crear un fitxer .json de ado/pot
+
+
+
+  Dins de un fluxe tindrem que afegir:
+  * 1 mqtt in
+  * 1 debug
+  * 1 function
+  * 1 escribir archivo (file)
