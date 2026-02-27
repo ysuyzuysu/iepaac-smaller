@@ -117,8 +117,10 @@ http://192.168.223.50:1880
   
 I ja tendirem el nostre servei Node-Red funcionant!!
 
-![alt text](image.png)
+<img width="1916" height="912" alt="image" src="https://github.com/user-attachments/assets/2abc36a3-ebcd-4f30-bda2-feb455f93495" />
+
 
 ### Proces per a insta·lar Influxdb: 
 Token:
 PsI5qkcST2aQDvXlFru7pysFGo86BN87FNjFK-hTPmZKyuE4GiMgmSNxJNFKz3euQrXzOlr5LJDw-m19N4osPg==
+
