@@ -2,7 +2,7 @@
 
 Un projecte IoT basat en tecnologia LoRa, dissenyat per a la monitorització de la vida marina en un entorn educatiu. Aquest projecte ha estat desenvolupat pel grup **Hydrahub**. 
 
-Com que no teníem coneixements previs de programació en C++, hem utilitzat la Intel·ligència Artificial (**Google Gemini**) per a crear tota la lògica del programari, demostrant com la IA pot ajudar a superar barreres tècniques en projectes científics.
+Com que no teníem coneixements previs de programació en C++, hem utilitzat la Intel·ligència Artificial (**Google Gemini**) per a crear tota la lògica del programari.
 
 ---
 
