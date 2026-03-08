@@ -4,7 +4,7 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <Wire.h>
-#include <SSD1306Wire.h> // Nova llibreria del teu company
+#include <SSD1306Wire.h> 
 
 // Configuració Pantalla OLED (Igual que el teu company)
 #define OLED_SDA 21
@@ -58,7 +58,7 @@ void reconnect() {
 void setup() {
   Serial.begin(115200);
 
-  // 0. Inicialitzar Pantalla OLED (Mètode del teu company)
+  // 0. Inicialitzar Pantalla OLED 
   display.init();
   display.flipScreenVertically();
   actualitzarPantalla("Iniciant...", "Espereu...");
