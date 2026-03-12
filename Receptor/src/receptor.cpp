@@ -6,7 +6,7 @@
 #include <Wire.h>
 #include <SSD1306Wire.h> 
 
-// Configuració Pantalla OLED (Igual que el teu company)
+// Configuració Pantalla OLED 
 #define OLED_SDA 21
 #define OLED_SCL 22
 SSD1306Wire display(0x3c, OLED_SDA, OLED_SCL); 
