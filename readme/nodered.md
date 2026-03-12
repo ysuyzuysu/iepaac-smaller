@@ -194,7 +194,7 @@ Anem al **menú**,
 
 <img width="44" height="30" alt="image" src="https://github.com/user-attachments/assets/42c9bb4c-34c6-497a-871a-2a02b73ad03c" />
 
-i després a **Administrar paleta***
+i després a **Administrar paleta**
 
 <img width="165" height="28" alt="image" src="https://github.com/user-attachments/assets/fd99d578-0cd2-4913-bd33-6cdb36f3d927" />
 
@@ -240,6 +240,153 @@ Li fiquem un nom i seleccionem el Tab creat anteriorment
 I per últim seleccionem el Group que hem creat anteriorment, i el configurem com volem, el nom, valors, etc
 
 <img width="569" height="558" alt="image" src="https://github.com/user-attachments/assets/ca18b22f-e026-4e7a-bdaa-194da147aeb7" />
+<br/>
+<br/>
+<br/>
+
+---
+
+* ## Telegram Bot:
+<img width="843" height="237" alt="image" src="https://github.com/user-attachments/assets/a7eb5026-00f2-46ca-9e35-ae5c4ab4b6af" />
+
+Dins de un fluxe tindrem que afegir:
+ * 2 mqtt in
+ * 3 function
+ * 1 sender
+ * 1 reciver
+<br/>
+<br/>
+
+* #### Insta·lar paleta de Telegram Bot a Node-Red
+Anem al **menú**, 
+
+<img width="44" height="30" alt="image" src="https://github.com/user-attachments/assets/42c9bb4c-34c6-497a-871a-2a02b73ad03c" />
+
+i després a **Administrar paleta**
+
+<img width="165" height="28" alt="image" src="https://github.com/user-attachments/assets/fd99d578-0cd2-4913-bd33-6cdb36f3d927" />
+
+Anem al cercador a l'apartat de **Instalar**, i cerquem ***Telegram***
+
+<img width="675" height="80" alt="image" src="https://github.com/user-attachments/assets/a07d65cb-4273-4a8c-bfc3-f3982a64672e" />
+<br/>
+
+* #### Configuració de les dades de ado/pot:
+Aprofitem el mqtt in creat al fluxe 1
+
+<img width="548" height="51" alt="image" src="https://github.com/user-attachments/assets/6a22eef6-1b50-47e2-9089-ea474c45e5de" />  
+
+<img width="757" height="218" alt="image" src="https://github.com/user-attachments/assets/d58f9262-c2c2-4424-98bf-ff0437f6003e" />
+
+<img width="545" height="158" alt="image" src="https://github.com/user-attachments/assets/96dd0619-a97b-4322-aead-896395aadc00" />
+<br/>
+<br/>
+
+Afegim un node function, el connectem al mqtt in de ado/pot i l'editem per preparar les dades per al bot, fem doble clic sobre el function i posem el següent codic
+El nostre codic:
+```
+global.set("pot", msg.payload);
+return null;
+```
+<img width="768" height="212" alt="image" src="https://github.com/user-attachments/assets/edb146fe-10eb-4df6-a36e-778e7812175a" />
+<br/>
+<br/>
+
+* #### Configuració de les dades de ado/ph:
+Aprofitem el mqtt in creat al fluxe 2
+
+<img width="553" height="49" alt="image" src="https://github.com/user-attachments/assets/3d88e5ad-dddb-4269-a48c-d358b32f0708" />
+<br/>
+<br/>
+
+Afegim un node function, el connectem al mqtt in de ado/ph i l'editem per preparar les dades per al bot, fem doble clic sobre el function i posem el següent codic
+El nostre codic:
+```
+global.set("ph", msg.payload);
+return null;
+```
+<img width="585" height="213" alt="image" src="https://github.com/user-attachments/assets/a2e728f9-55d3-490b-baf5-5b983068b04b" />
+<br/>
+<br/>
+
+* #### Configuració del bot a telegram:
+Anem al nostre compte de telegram i busquem al cercador BotFather:
+
+<img width="459" height="87" alt="image" src="https://github.com/user-attachments/assets/baa865a7-9ab4-46fb-91ff-49ee5c96ef8b" />
+
+Entrem al chat i posem **/newbot**
+
+<img width="183" height="57" alt="image" src="https://github.com/user-attachments/assets/68e23e18-7818-40d8-93e8-aa7f90adb7cc" />
+
+Despres ens demanara un nom per al bot
+
+<img width="881" height="122" alt="image" src="https://github.com/user-attachments/assets/748331a8-50c8-4523-952b-4d7d780ae8b0" />
+
+I per últim un username per al bot
+
+<img width="884" height="127" alt="image" src="https://github.com/user-attachments/assets/60e02a48-b81f-4a5b-8485-4c4aa05d252f" />
+
+I per finalitzar tenim que copiar el token que ens dona, que es la "id" del bot
+<br/>
+
+* #### Configuració del bot a Node-Red:
+Afegim un node de **Telegram Reciver**, agregat de la paleta Telegram Bot anteriorement i li fem doble clic, i clicarem al **"+"**
+
+<img width="545" height="54" alt="image" src="https://github.com/user-attachments/assets/e77e354c-08b8-4328-b25f-f2511bc1147c" />
+
+Després posarem el nom del bot i el token que hem copiat antes
+
+<img width="773" height="119" alt="image" src="https://github.com/user-attachments/assets/8f9b4d1b-ea94-43f5-82bb-cc85e74be1ea" />
+
+Connectem un node function al reciver i posem el següent, per preparar les respostes al chat
+```
+let texto = msg.payload.content.toLowerCase();
+
+if (texto.includes("pot")) {
+    let pot = global.get("pot") || "No disponible";
+    
+    msg.payload.content = " Pot actual: " + pot + " V";
+    return msg;
+}
+
+if (texto.includes("ph")) {
+    let ph = global.get("ph") || "No disponible";
+    
+    msg.payload.content = " pH actual: " + ph;
+    return msg;
+}
+
+return null;
+```
+
+<img width="766" height="538" alt="image" src="https://github.com/user-attachments/assets/630463f9-998d-4f42-a2ac-1597716d98b6" />
+<br/>
+
+I per últim ho connectem a un **Telegram Sender** i posem el bot creat anteriorment
+
+<img width="552" height="120" alt="image" src="https://github.com/user-attachments/assets/09242d3a-9384-4c07-8482-b0716d9cb3e5" />
+<br/>
+<br/>
+
+* #### Comprovació del bot a Telegram:
+Busquem el nostre bot a telegram, o obrim el enllaç que ens dona BotFather
+
+<img width="469" height="99" alt="image" src="https://github.com/user-attachments/assets/94bd4be0-0bc6-4384-a815-bf95cb220e3f" />
+<br/>
+
+I després escrivim al chat el que volem saber, dacord amb la configuració dels function, per exemple cuan io escric ***pot*** ens diu els valors del potenciometre
+
+<img width="886" height="106" alt="image" src="https://github.com/user-attachments/assets/19604e0c-8cef-405c-bcbe-028c231875eb" />
+
+o del pH
+
+<img width="896" height="110" alt="image" src="https://github.com/user-attachments/assets/f8e405fc-0f32-4514-bccf-9af8058441ca" />
+
+
+
+
+
+
 
 
 
