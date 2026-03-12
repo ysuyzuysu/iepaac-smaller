@@ -8,7 +8,7 @@ Aquest repositori conté el codi de l'emissor per a una placa **TTGO T-Beam** qu
 * **Sensor de pH:** Mòdul PH-4502C connectat al **GPIO 32**.
 * **Potenciòmetre:** Connectat al **GPIO 35**.
 * **Antena:** 868 MHz connectada obligatòriament abans d'encendre.
-
+* **Sensor de Temperatura/Humitat, DHT11:** Sensor (opcional) per a medir la temperatura i humitat. 
 ## 💻 Configuració de VS Code + PlatformIO
 
 1. Instal·leu l'extensió **PlatformIO IDE** a VS Code.
@@ -37,6 +37,9 @@ lib_deps =
 | **Pantalla OLED** | Reset | **GPIO 16** (o automàtic) |
 | **Sensor pH** | Senyal (Po) | **GPIO 32** |
 | **Potenciòmetre** | Senyal | **GPIO 35** |
+| **Sensor de Humitat** | Senyal | **GPIO 14** |
+| **Sensor de Humitat** | VCC | **5V** |
+
 
 ## 🚀 Instruccions de Flashing
 
