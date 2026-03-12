@@ -35,7 +35,6 @@ lib_deps =
 | **Pantalla OLED** | VCC | **3,3V** |
 | **Pantalla OLED** | SDA | **GPIO 21** |
 | **Pantalla OLED** | SCL | **GPIO 22** |
-| **Pantalla OLED** | Reset | **GPIO 16** (o automàtic) |
 | **Sensor pH** | Senyal (Po) | **GPIO 32** |
 | **Potenciòmetre** | Senyal | **GPIO 35** |
 | **Sensor de Humitat** | Senyal | **GPIO 14** |
