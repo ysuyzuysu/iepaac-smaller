@@ -32,6 +32,7 @@ lib_deps =
 
 | Component | Pin Origen | Pin T-Beam |
 | --- | --- | --- |
+| **Pantalla OLED** | VCC | **3,3V** |
 | **Pantalla OLED** | SDA | **GPIO 21** |
 | **Pantalla OLED** | SCL | **GPIO 22** |
 | **Pantalla OLED** | Reset | **GPIO 16** (o automàtic) |
@@ -39,7 +40,6 @@ lib_deps =
 | **Potenciòmetre** | Senyal | **GPIO 35** |
 | **Sensor de Humitat** | Senyal | **GPIO 14** |
 | **Sensor de Humitat** | VCC | **5V** |
-
 
 ## 🚀 Instruccions de Flashing
 
