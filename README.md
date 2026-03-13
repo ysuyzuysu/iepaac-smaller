@@ -60,6 +60,13 @@ El projecte es divideix en 4 parts principals. Consulteu els seus README especí
 4.  **Configuració MQTT:** Assegura't que la Raspberry Pi estigui a la mateixa xarxa i que la IP estigui correctament configurada al codi del Receptor.
 
 ---
+## 📦 Models 3D
+
+ [Els models 3D del receptor es poden aconseguir aquí:](https://drive.google.com/drive/folders/17oX8IoxLh35KBV3e0EGFtAQ-nVkv9ZYv?usp=drive_link)
+
+[Mitjançant aquest enllaç es pot consultar el disclaimer del model 3D del receptor](https://docs.google.com/document/d/1MhLCtq1Py856pTXIeSpxlGyIARf45__jfCRPABAxcps/edit?usp=drive_link)
+
+---
 
 ## 📝 Crèdits i Reconeixements
 
