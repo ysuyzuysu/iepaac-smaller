@@ -15,16 +15,30 @@ Aquest repositori conté el codi de l'emissor per a una placa **TTGO T-Beam** qu
 2. Substituïu el contingut del vostre fitxer `platformio.ini` per aquest bloc:
 
 ```ini
+; PlatformIO Project Configuration File
+;
+;   Build options: build flags, source filter
+;   Upload options: custom upload port, speed and extra flags
+;   Library options: dependencies, extra library storages
+;   Advanced options: extra scripting
+;
+; Please visit documentation for the other options and examples
+; https://docs.platformio.org/page/projectconf.html
+
 [env:ttgo-t-beam]
 platform = espressif32
 board = ttgo-t-beam
 framework = arduino
-monitor_speed = 115200
-lib_deps =
-    sandeepmistry/LoRa @ ^0.8.0
+lib_deps = 
     adafruit/Adafruit SSD1306 @ ^2.5.7
-    adafruit/Adafruit GFX Library @ ^1.11.7
+    adafruit/Adafruit GFX Library @ ^1.11.5
     adafruit/Adafruit BusIO @ ^1.14.1
+    sandeepmistry/LoRa @ ^0.8.0
+    thingpulse/ESP8266 and ESP32 OLED driver for SSD1306 displays @ ^4.4.0
+    sandeepmistry/LoRa @ ^0.8.0
+    adafruit/DHT sensor library @ ^1.4.3
+monitor_speed = 115200
+
 
 ```
 
