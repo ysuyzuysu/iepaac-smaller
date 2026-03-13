@@ -54,7 +54,7 @@ monitor_speed = 115200
 | **Sensor de Humitat** | Senyal | **GPIO 14** |
 | **Sensor de Humitat** | VCC | **5V** |
 
-(També el potenciòmetre i el sensor de pH s'han de connectar als pins de 3,3 i 5 volts respectivament. Però per maquinari limitat no podem fer això).
+**(També el potenciòmetre i el sensor de pH s'han de connectar als pins de 3,3 i 5 volts respectivament. Però per maquinari limitat no podem fer això).**
 
 ## 🚀 Instruccions de Flashing
 
