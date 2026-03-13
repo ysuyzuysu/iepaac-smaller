@@ -22,8 +22,6 @@ lib_deps =
 	knolleary/PubSubClient @ ^2.8
 	thingpulse/ESP8266 and ESP32 OLED driver for SSD1306 displays @ ^4.4.1
 monitor_speed = 115200
-
-
 ```
 
 ## 🔌 Esquema de Connexions i Pantalla
