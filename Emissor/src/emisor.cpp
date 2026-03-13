@@ -5,12 +5,12 @@
 #include <SSD1306Wire.h> 
 #include "DHT.h"
 
-// --- Configuración Pantalla OLED ---
+// --- Configuració Pantalla OLED ---
 #define OLED_SDA 21
 #define OLED_SCL 22
 SSD1306Wire display(0x3c, OLED_SDA, OLED_SCL); 
 
-// --- Configuración DHT11 ---
+// --- Configuració DHT11 ---
 #define DHTPIN 14
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
@@ -28,8 +28,8 @@ DHT dht(DHTPIN, DHTTYPE);
 #define PIN_PH      32
 #define LED_AZUL     4   
 
-// --- DECLARACIÓN DE FUNCIONES (Prototipos) ---
-// Esto le dice al compilador que estas funciones existen más abajo
+// --- DECLARACIÓ DE FUNCIONS (Prototips) ---
+// Això li diu al compilador que aquestes funcions existeixen més a baix
 void actualitzarPantalla(String linia1, String linia2);
 void enviarLoRa(String mensaje);
 
@@ -56,7 +56,7 @@ void setup() {
 
 void loop() {
     // 1. ENVIAR POT
-    float vPot = analogRead(PIN_POT) * (3.3 / 4095.0); // Ajustado a 3.3V que es el estándar de la T-Beam
+    float vPot = analogRead(PIN_POT) * (3.3 / 4095.0); // Ajustat a 3.3V que és l'estàndard de la T-*Beam
     String msgPot = "POT:" + String(vPot, 2);
     enviarLoRa(msgPot);
     delay(2000);
@@ -68,13 +68,13 @@ void loop() {
     enviarLoRa(msgPH);
     delay(2000);
 
-    // 3. ENVIAR TEMPERATURA Y HUMEDAD
+    // 3. ENVIAR TEMPERATURA I HUMITAT
     float h = dht.readHumidity();
     float t = dht.readTemperature();
 
     if (isnan(h) || isnan(t)) {
         Serial.println("Error leyendo el DHT11!");
-        // No enviamos nada si falla la lectura
+        // No enviem res si falla la lectura
     } else {
         String msgT = "TEMP:" + String(t, 1);
         String msgH = "HUM:" + String(h, 0);
@@ -85,7 +85,7 @@ void loop() {
     delay(5000);
 }
 
-// --- DEFINICIÓN DE FUNCIONES ---
+// --- DEFINICIÓ DE FUNCIONS ---
 void enviarLoRa(String mensaje) {
     actualitzarPantalla("ENVIANT...", mensaje);
     digitalWrite(LED_AZUL, HIGH);
