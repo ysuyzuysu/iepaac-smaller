@@ -75,7 +75,3 @@ El sistema calcula el pH basant-se en una referència de voltatge. Si el valor �
 
 * Introduïu la sonda en una solució neutra (pH 7).
 * Ajusteu el cargol del potenciòmetre blau de la placa del sensor fins que la pantalla mostri **pH: 7.00**.
-
----
-
-Vols que t'adjunti també el bloc de codi `main.cpp` final sense comentaris per completar el teu repositori?
